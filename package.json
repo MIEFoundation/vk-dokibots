@@ -1,0 +1,17 @@
+{
+  "name": "vk-dokibots",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "MIEFoundation",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@vk-io/hear": "^1.1.0",
+    "@vk-io/session": "^2.1.0",
+    "vk-io": "^4.3.1"
+  }
+}
