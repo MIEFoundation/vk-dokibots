@@ -5,8 +5,8 @@ module.exports = [
 	...contentEntries('Natsuki'),
 	// Complex
 	[
-		commandRegex('дай', 'кекс[ыовки]{0,3}( пожалуйста){0,1}'),
-		(ctx, next) => {
+		commandRegex('(?:можно|дай)', 'кекс[ыовки]{0,3}([,]{0,1} пожалу+йста){0,1}'),
+		async (ctx, next) => {
 			const askedBefore = ctx.utils.get(ctx.senderId + 'askedBefore') ?? 0
 			if (askedBefore) {
 				return ctx.reply('Не много ли тебе?')

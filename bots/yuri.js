@@ -6,15 +6,16 @@ module.exports = [
 	// Complex
 	[
 		commandRegex('(?:налей |дайте ){0,1}(?:ча[йю])(?: пожалуйста){0,1}'),
-		(ctx, next) => {
-			const askedBefore = ctx.utils.get(ctx.groupId, ctx.senderId + 'askedBefore') ?? 0
+		async (ctx, next) => {
+			const askedBefore = ctx.utils.get(ctx.senderId + 'askedBefore') ?? 0
 			if (askedBefore) {
 				ctx.reply('Разве я не наливала тебе уже? Хорошо...')
 			} else {
-				ctx.utils.set(ctx.groupId, ctx.senderId + 'askedBefore', askedBefore + 1)
+				ctx.utils.set(ctx.senderId + 'askedBefore', askedBefore + 1)
 				ctx.reply('Хорошо, сейчас...')
 			}
-			ctx.utils.serviceMessage(ctx, `// Юри налила @${ctx.isFromUser ? 'id' : 'club'}${Math.abs(ctx.senderId)} чаю`)
+			const senderName = await ctx.utils.getSenderName(ctx, 'dat')
+			ctx.utils.serviceMessage(ctx, `// Юри налила ${senderName} чаю`)
 		}
 	],
 	getRandomPhraseEntry('(?:вино|вина[, ]?|налей вино)(?: пожалуйста){0,1}', [
