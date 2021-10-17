@@ -8,6 +8,13 @@ const vk = new VK({
 const storage = new Map()
 
 class GroupUtils {
+	static async serviceMessage (ctx, message) {
+		await vk.api.message.send({
+			peer_id: ctx.peerId,
+			random_id: Math.random() * 0xffff_ffff_ffff_ffff,
+			message
+		})
+	}
 	static async getRandomPost (query) {
 		const { count } = await vk.api.wall.search({ owner_id, query, count: 0 })
 		const offset = (Math.random() * count) | 0
