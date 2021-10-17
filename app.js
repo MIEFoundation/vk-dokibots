@@ -22,7 +22,7 @@ async function start () {
 	for (const bot of bots.values()) {
 		await bot.start()
 	}
-	console.log('Poolling!')
+	console.log('Polling!')
 }
 
 async function stop () {
