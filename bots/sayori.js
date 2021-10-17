@@ -3,6 +3,26 @@ const { commandRegex, messageFilter, contentEntries, getRandomPhraseEntry } = re
 module.exports = [
 	messageFilter('(?:са[йоеё]{1,2}ри|са[йя]{1,2})'),
 	...contentEntries('Sayori'),
+	// Complex
+	getRandomPhraseEntry('Не много ли тебе?', [
+		'Ууу...',
+		'Да ладно?!',
+		'Эм, может быть...',
+	]),
+	getRandomPhraseEntry('(?:кекс[ыик]{0,3}|дай кекс[ыовки]{0,3})', [
+		'Нацуки, дай кексики пожалуйста',
+		'Нацуки, можно кексы, пожалуууйста',
+		'Нацуки кекс',
+	]),
+	getRandomPhraseEntry('Ладно, держи свой кекс!', [
+		'Спасибо!',
+		'Благодарю!',
+	]),
+	getRandomPhraseEntry(['дай', 'кекс[ыовки]{0,3}'], [
+		'Нет!',
+		'Не дам, бака!',
+		'Кексы не дам!',
+	]),
 	// Reacts
 	getRandomPhraseEntry(null, [
 		'Агась?',
@@ -13,12 +33,14 @@ module.exports = [
 		'Спасибо, ты тоже!',
 		'Кхе-кхе, спасибо!',
 		'Оу, не за что!',
-		'',
 	]),
 	getRandomPhraseEntry('(?:верёвка|ты ошибка|сука|сдохни|иди нахуй)', [
 		'...Злюка >_>',
 		'Пошёл ты!',
 		'Ну ты и дурак.',
+	]),
+	getRandomPhraseEntry('(?:спасибо|благодарю)', [
+		'Пожалуйста!',
 	]),
 	// Utils
 	getRandomPhraseEntry('комплимент', [

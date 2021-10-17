@@ -49,6 +49,9 @@ module.exports = [
 		'Кекс. И что?',
 		'???',
 	]),
+	getRandomPhraseEntry('(?:спасибо|благодарю)', [
+		'Эээ... Не благодари',
+	]),
 	// Utils
 	getRandomPhraseEntry('рецепт[ы]{0,1}', [
 		'Рецепт чего?',
