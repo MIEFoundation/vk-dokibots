@@ -5,6 +5,7 @@ const vk = new VK({
 	apiHeaders: { 'User-Agent': 'MIEFoudation/Webhook (+https://vk.com/@miefoundation-tech)' },
 	token: process.env.SERVICE
 })
+const storage = new Map()
 
 class GroupUtils {
 	static async getRandomPost (query) {
@@ -12,6 +13,14 @@ class GroupUtils {
 		const offset = (Math.random() * count) | 0
 		const { items: [ payload ] } = await vk.api.wall.search({ owner_id, query, count: 1, offset })
 		return new WallAttachment({ payload })
+	}
+	static get (groupId, name) {
+		return (storage.get(groupId) ?? {})[name]
+	}
+	static set (groupId, name, value) {
+		const obj = storage.get(groupId) ?? {}
+		obj[name] = value
+		return storage.set(groupId, obj)
 	}
 }
 
