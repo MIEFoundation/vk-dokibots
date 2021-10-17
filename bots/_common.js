@@ -8,31 +8,79 @@ const vk = new VK({
 const storage = new Map()
 
 class GroupUtils {
-	static async serviceMessage (ctx, message) {
-		await vk.api.message.send({
-			peer_id: ctx.peerId,
-			random_id: Math.random() * 0xffff_ffff_ffff_ffff,
-			message
-		})
+	constructor () {
+		this.groupId = 0
 	}
-	static async getRandomPost (query) {
+	async init (api) {
+		const [ {id} ] = await api.groups.getById({})
+		this.groupId = id
+	}
+	get (name) {
+		return (storage.get(this.groupId) ?? {})[name]
+	}
+	set (name, value) {
+		const obj = storage.get(this.groupId) ?? {}
+		obj[name] = value
+		return storage.set(this.groupId, obj)
+	}
+	async serviceMessage (ctx, message) {
+		const randomId = Math.random() * 0xffff_ffff_ffff_ffff
+		for (let i = 0; i < 3; i++) {
+			try {
+				await vk.api.messages.send({
+					peer_id: 2000000000 + 5,
+					random_id: randomId,
+					message
+				})
+				break
+			} catch (e) {
+				console.error('Failed to send message', e)
+			}
+		}
+	}
+	async getGroupData (id) {
+		const [ group ] = await vk.api.groups.getById({
+			group_id: id,
+		//	fields: 'members_count'
+		})
+		return group
+	}
+	async getUserData (id, nCase = 'nom') {
+		const [ user ] = await vk.api.users.get({
+			user_ids: id,
+		//	fields: 'sex',
+			name_case: nCase
+		})
+		return user
+	}
+	async getSenderName (ctx, nCase = 'nom') {
+		if (ctx.isUser) {
+			const user = await this.getUserData(ctx.senderId, nCase)
+			return `@id${user.id} (${user.first_name})`
+		} else {
+			const group = await this.getGroupData(-ctx.senderId)
+			return `@club${group.id} (${group.name.match(/\S+/)[0]})`
+		}
+	}
+	async getRandomPost (query) {
 		const { count } = await vk.api.wall.search({ owner_id, query, count: 0 })
 		const offset = (Math.random() * count) | 0
 		const { items: [ payload ] } = await vk.api.wall.search({ owner_id, query, count: 1, offset })
 		return new WallAttachment({ payload })
 	}
-	static get (groupId, name) {
-		return (storage.get(groupId) ?? {})[name]
-	}
-	static set (groupId, name, value) {
-		const obj = storage.get(groupId) ?? {}
-		obj[name] = value
-		return storage.set(groupId, obj)
-	}
 }
 
+const groupCache = new WeakMap()
+
 async function utils (ctx, next) {
-	ctx.utils = GroupUtils
+	if (groupCache.has(ctx.api)) {
+		ctx.utils = groupCache.get(ctx.api)
+	} else {
+		ctx.utils = new GroupUtils()
+		await ctx.utils.init(ctx.api)
+		groupCache.set(ctx.api, ctx.utils)
+	}
+	ctx.groupId = ctx.utils.groupId
 	next()
 }
 

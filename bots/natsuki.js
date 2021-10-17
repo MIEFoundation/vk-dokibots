@@ -7,15 +7,16 @@ module.exports = [
 	[
 		commandRegex('дай', 'кекс[ыовки]{0,3}( пожалуйста){0,1}'),
 		(ctx, next) => {
-			const askedBefore = ctx.utils.get(ctx.groupId, ctx.senderId + 'askedBefore') ?? 0
+			const askedBefore = ctx.utils.get(ctx.senderId + 'askedBefore') ?? 0
 			if (askedBefore) {
 				return ctx.reply('Не много ли тебе?')
 			}
 			if (!ctx.$match[1] || askedBefore > 0) return next()
-			if (ctx.isFromUser && Math.random() > 0.5) return next()
-			ctx.utils.set(ctx.groupId, ctx.senderId + 'askedBefore', askedBefore++)
+			if (ctx.isUser && Math.random() > 0.5) return next()
+			ctx.utils.set(ctx.senderId + 'askedBefore', askedBefore++)
 			ctx.reply('Ладно, держи свой кекс!')
-			ctx.utils.serviceMessage(ctx, `// Нацуки передала @${ctx.isFromUser ? 'id' : 'club'}${Math.abs(ctx.senderId)} кекс`)
+			const senderName = await ctx.utils.getSenderName(ctx, 'dat')
+			ctx.utils.serviceMessage(ctx, `// Нацуки передала ${senderName} кекс`)
 		}
 	],
 	getRandomPhraseEntry(['дай', 'кекс[ыовки]{0,3}'], [

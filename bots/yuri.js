@@ -1,4 +1,4 @@
-const { commandRegex, contentEntries, getRandomPhraseEntry } = require('../utils')
+const { messageFilter, commandRegex, contentEntries, getRandomPhraseEntry } = require('../utils')
 
 module.exports = [
 	messageFilter('[йую]{1,2}ри'),
