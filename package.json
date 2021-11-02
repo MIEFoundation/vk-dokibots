@@ -1,14 +1,13 @@
 {
   "name": "vk-dokibots",
-  "version": "0.1.0",
-  "private": true,
-  "description": "",
+  "version": "0.1.1",
+  "description": "Bring DDLC girls to VKontakte",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["ddlc", "vk", "chatbot"],
   "author": "MIEFoundation",
-  "license": "UNLICENSED",
+  "license": "GPL-3.0",
   "dependencies": {
     "@vk-io/hear": "^1.1.0",
     "@vk-io/session": "^2.1.0",
