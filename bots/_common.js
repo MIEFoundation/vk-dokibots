@@ -14,6 +14,7 @@ class GroupUtils {
 	async init (api) {
 		const [ {id} ] = await api.groups.getById({})
 		this.groupId = id
+		console.log(`Init GroupUtils with ID ${this.groupId}`)
 	}
 	get (name) {
 		return (storage.get(this.groupId) ?? {})[name]

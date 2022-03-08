@@ -1,0 +1,135 @@
+lockfileVersion: 5.3
+
+specifiers:
+  '@vk-io/hear': ^1.1.0
+  '@vk-io/session': ^2.1.0
+  vk-io: ^4.3.1
+
+dependencies:
+  '@vk-io/hear': 1.1.0_vk-io@4.4.0
+  '@vk-io/session': 2.1.0_vk-io@4.4.0
+  vk-io: 4.4.0
+
+packages:
+
+  /@vk-io/hear/1.1.0_vk-io@4.4.0:
+    resolution: {integrity: sha512-L2Jfn+L9otrnxbZSt6K10nCnF/KyLrFuuEYufx03Y+HOSoq6cIIopKtPLPfMH7lqVg/0iLZ3jTqzbG+qOi4YuQ==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      vk-io: ^4.0.0
+    dependencies:
+      middleware-io: 2.8.0
+      vk-io: 4.4.0
+    dev: false
+
+  /@vk-io/session/2.1.0_vk-io@4.4.0:
+    resolution: {integrity: sha512-HZwodlEz/WCR+5ILWNbRE/oebEYywNSk4uN5Ax15Ma72+bnuWXDu3HTABOo2qKXK3G/UOavE0Q5tWlt5Tmt9Jg==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      vk-io: ^4.0.0
+    dependencies:
+      vk-io: 4.4.0
+    dev: false
+
+  /abort-controller/3.0.0:
+    resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
+    engines: {node: '>=6.5'}
+    dependencies:
+      event-target-shim: 5.0.1
+    dev: false
+
+  /data-uri-to-buffer/3.0.1:
+    resolution: {integrity: sha512-WboRycPNsVw3B3TL559F7kuBUM4d8CgMEvk6xEJlOp7OBPjt6G7z8WMWlD2rOFZLk6OYfFIUGsCOWzcQH9K2og==}
+    engines: {node: '>= 6'}
+    dev: false
+
+  /debug/4.3.2:
+    resolution: {integrity: sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: 2.1.2
+    dev: false
+
+  /event-target-shim/5.0.1:
+    resolution: {integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==}
+    engines: {node: '>=6'}
+    dev: false
+
+  /fetch-blob/3.1.2:
+    resolution: {integrity: sha512-hunJbvy/6OLjCD0uuhLdp0mMPzP/yd2ssd1t2FCJsaA7wkWhpbp9xfuNVpv7Ll4jFhzp6T4LAupSiV9uOeg0VQ==}
+    engines: {node: ^12.20 || >= 14.13}
+    dependencies:
+      web-streams-polyfill: 3.1.1
+    dev: false
+
+  /form-data-encoder/1.6.0:
+    resolution: {integrity: sha512-P97AVaOB8hZaniiKK3f46zxQcchQXI8EgBnX+2+719gLv5ZbDSf3J1XtIuAQ8xbGLU4vZYhy7xwhFtK8U5u9Nw==}
+    dev: false
+
+  /formdata-node/4.3.0:
+    resolution: {integrity: sha512-TwqhWUZd2jB5l0kUhhcy1XYNsXq46NH6k60zmiu7xsxMztul+cCMuPSAQrSDV62zznhBKJdA9O+zeWj5i5Pbfg==}
+    engines: {node: '>= 12.20'}
+    dependencies:
+      node-domexception: 1.0.0
+      web-streams-polyfill: 4.0.0-beta.1
+    dev: false
+
+  /inspectable/1.2.0:
+    resolution: {integrity: sha512-5czj8MJaTEL6xO7YmIwNPxrJQI+caxU9a2JcaN/0tVpkMZfKTh5FK+OafsMtnpBT4ekxcaHZOW3+DrluBVaLOQ==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      reflect-metadata: ^0.1.13
+    dev: false
+
+  /middleware-io/2.8.0:
+    resolution: {integrity: sha512-0H1cmtQwo2GGhfpTeoqcN/tdJNoCgZ5QVPK7xRMEkiL1mYzEF3bEQt8AMDJ6OAV0bUNU/c8nL5lRymdkLPRb9w==}
+    engines: {node: '>=12.0.0'}
+    dev: false
+
+  /ms/2.1.2:
+    resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
+    dev: false
+
+  /node-domexception/1.0.0:
+    resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
+    engines: {node: '>=10.5.0'}
+    dev: false
+
+  /node-fetch/3.0.0:
+    resolution: {integrity: sha512-bKMI+C7/T/SPU1lKnbQbwxptpCrG9ashG+VkytmXCPZyuM9jB6VU+hY0oi4lC8LxTtAeWdckNCTa3nrGsAdA3Q==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      data-uri-to-buffer: 3.0.1
+      fetch-blob: 3.1.2
+    dev: false
+
+  /vk-io/4.4.0:
+    resolution: {integrity: sha512-jg5atOUHHXRxZ+CJOtN1baWAYrVLzKYGNsjZtQn6fNrQnkcYC7jXKBW2pXmQhZjNOVDvkooN/9koZOaoh3JOqw==}
+    engines: {node: '>=12.0.0'}
+    dependencies:
+      abort-controller: 3.0.0
+      debug: 4.3.2
+      form-data-encoder: 1.6.0
+      formdata-node: 4.3.0
+      inspectable: 1.2.0
+      middleware-io: 2.8.0
+      node-fetch: 3.0.0
+    transitivePeerDependencies:
+      - reflect-metadata
+      - supports-color
+    dev: false
+
+  /web-streams-polyfill/3.1.1:
+    resolution: {integrity: sha512-Czi3fG883e96T4DLEPRvufrF2ydhOOW1+1a6c3gNjH2aIh50DNFBdfwh2AKoOf1rXvpvavAoA11Qdq9+BKjE0Q==}
+    engines: {node: '>= 8'}
+    dev: false
+
+  /web-streams-polyfill/4.0.0-beta.1:
+    resolution: {integrity: sha512-3ux37gEX670UUphBF9AMCq8XM6iQ8Ac6A+DSRRjDoRBm1ufCkaCDdNVbaqq60PsEkdNlLKrGtv/YBP4EJXqNtQ==}
+    engines: {node: '>= 12'}
+    dev: false
