@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const assert = require('assert')
 const Bot = require('./bot')
 
@@ -6,13 +8,17 @@ const bots = new Map()
 async function start () {
 	assert.ok(process.env.TOKEN, 'TOKEN must not be empty')
 	assert.ok(process.env.SERVICE, 'SERVICE must not be empty')
-	assert.ok(process.env.TOKEN.includes('='), 'TOKEN must be a pair(-s) of name=token')
-	const tokens = process.env.TOKEN.split(',').map(v => v.split('=', 2))
+	const tokens = process.env.TOKEN
+		.split('\n')
+		.filter(String)
+		.map(v => v.split('=', 2))
+		.map(v => (v[1] = v[1].split(','), v))
+    tokens.forEach(v => assert.ok(v.length === 2, 'TOKEN must be a pair(-s) of name=token'))
 	
 	const common = require('./bots/_common.js')
-	for (const [name, token] of tokens) {
+	for (const [name, [group_id, token]] of tokens) {
 		console.log(`Creating ${name} bot`)
-		const bot = new Bot(token)
+		const bot = new Bot(group_id, token)
 		common.forEach(v => bot.on(v))
 		require(`./bots/${name}.js`).forEach(v => bot.hear(...v))
 		bots.set(name, bot)

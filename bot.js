@@ -3,11 +3,12 @@ const { HearManager } = require('@vk-io/hear')
 const { SessionManager } = require('@vk-io/session')
 
 class Bot {
-	constructor (token) {
+	constructor (id, token) {
 		this.vk = new VK({
 			apiHeaders: { 'User-Agent': 'MIEFoudation/Webhook (+https://vk.com/@miefoundation-tech)' },
 			token
 		})
+        this.groupId = id
 		this.hearManager = new HearManager()
 		this.sessionManager = new SessionManager()
 		this.initialized = false

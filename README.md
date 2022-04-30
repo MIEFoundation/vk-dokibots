@@ -7,6 +7,6 @@ Error-tolerant and easy to use.
 
 - Install dependencies: `npm i` (`pnpm` packet manager is recommended)
 
-- Set environment variable `TOKEN` as `sayori=AA,yuri=BB,natsuki=CC`
+- Create dotfile from `.env.example` to supply environment variables
 
 - If you don't specify access token for specific doki - it will be ignored and app will run without it.
