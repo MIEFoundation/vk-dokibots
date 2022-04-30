@@ -32,7 +32,7 @@ class Bot {
 		this.on(this.defaultMiddleware)
 			.on(this.sessionManager.middleware)
 			.on(this.hearManager.middleware)
-		this.vk.api.groups.enableOnline({ group_id: this.groupId })
+		this.vk.api.groups.enableOnline({ group_id: this.groupId }).catch(err => console.warn('Already online', err))
 		return this.vk.updates.start()
 	}
 	stop () { return this.vk.updates.stop() }
