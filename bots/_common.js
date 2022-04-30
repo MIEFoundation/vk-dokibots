@@ -26,17 +26,14 @@ class GroupUtils {
 	}
 	async serviceMessage (ctx, message) {
 		const randomId = Math.random() * 0xffff_ffff_ffff_ffff
-		for (let i = 0; i < 3; i++) {
-			try {
-				await vk.api.messages.send({
-					peer_id: 2000000000 + 5,
-					random_id: randomId,
-					message
-				})
-				break
-			} catch (e) {
-				console.error('Failed to send message', e)
-			}
+		try {
+			await vk.api.messages.send({
+				peer_id: 2000000000 + 5,
+				random_id: randomId,
+				message
+			})
+		} catch (e) {
+			console.error('Failed to send message', e)
 		}
 	}
 	async getGroupData (id) {

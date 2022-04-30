@@ -11,7 +11,6 @@ class Bot {
         this.groupId = id
 		this.hearManager = new HearManager()
 		this.sessionManager = new SessionManager()
-		this.initialized = false
 	}
 	
 	defaultMiddleware (ctx, next) {
@@ -30,12 +29,10 @@ class Bot {
 	}
 
 	start () {
-		if (!this.initialized) {
-			this.on(this.defaultMiddleware)
-				.on(this.sessionManager.middleware)
-				.on(this.hearManager.middleware)
-			this.initialized = true
-		}
+		this.on(this.defaultMiddleware)
+			.on(this.sessionManager.middleware)
+			.on(this.hearManager.middleware)
+		this.vk.api.groups.enableOnline({ group_id: this.groupId })
 		return this.vk.updates.start()
 	}
 	stop () { return this.vk.updates.stop() }

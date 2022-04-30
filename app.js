@@ -14,7 +14,7 @@ async function start () {
 		.map(v => v.split('=', 2))
 		.map(v => (v[1] = v[1].split(','), v))
     tokens.forEach(v => assert.ok(v.length === 2, 'TOKEN must be a pair(-s) of name=token'))
-	
+
 	const common = require('./bots/_common.js')
 	for (const [name, [group_id, token]] of tokens) {
 		console.log(`Creating ${name} bot`)
@@ -23,22 +23,23 @@ async function start () {
 		require(`./bots/${name}.js`).forEach(v => bot.hear(...v))
 		bots.set(name, bot)
 	}
-
 	console.log('Loaded!')
-	for (const bot of bots.values()) {
+	
+	for (const [name, bot] of bots.entries()) {
 		await bot.start()
+		console.log(`Started bot ${name}`)
 	}
 	console.log('Polling!')
 }
 
 async function stop () {
 	console.group('Stop')
-	const promises = []
-	for (const bot of bots.values()) {
-		promises.push(bot.stop())
+	for (const [name, bot] of bots.entries()) {
+		await bot.stop()
+		console.log(`Stopped bot ${name}`)
 	}
-	await Promise.allSettled(promises)
 	console.groupEnd('Stop')
+	console.log('Stopped!')
 	process.exit(0)
 }
 
@@ -48,13 +49,12 @@ async function main () {
 		await start()
 		console.groupEnd('Start')
 		console.log('Ready!')
+		process.on('SIGTERM', stop)
 	} catch (e) {
 		console.groupEnd('Start')
 		console.error('Error starting', e)
 		process.exit(1)
 	}
-	process.on('SIGINT', stop)
-	process.on('SIGTERM', stop)
 }
 
 main()
