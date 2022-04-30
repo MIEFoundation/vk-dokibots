@@ -3,32 +3,34 @@ lockfileVersion: 5.3
 specifiers:
   '@vk-io/hear': ^1.1.0
   '@vk-io/session': ^2.1.0
-  vk-io: ^4.3.1
+  dotenv: ^16.0.0
+  vk-io: ^4.5.2
 
 dependencies:
-  '@vk-io/hear': 1.1.0_vk-io@4.4.0
-  '@vk-io/session': 2.1.0_vk-io@4.4.0
-  vk-io: 4.4.0
+  '@vk-io/hear': 1.1.0_vk-io@4.5.2
+  '@vk-io/session': 2.1.0_vk-io@4.5.2
+  dotenv: 16.0.0
+  vk-io: 4.5.2
 
 packages:
 
-  /@vk-io/hear/1.1.0_vk-io@4.4.0:
+  /@vk-io/hear/1.1.0_vk-io@4.5.2:
     resolution: {integrity: sha512-L2Jfn+L9otrnxbZSt6K10nCnF/KyLrFuuEYufx03Y+HOSoq6cIIopKtPLPfMH7lqVg/0iLZ3jTqzbG+qOi4YuQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vk-io: ^4.0.0
     dependencies:
       middleware-io: 2.8.0
-      vk-io: 4.4.0
+      vk-io: 4.5.2
     dev: false
 
-  /@vk-io/session/2.1.0_vk-io@4.4.0:
+  /@vk-io/session/2.1.0_vk-io@4.5.2:
     resolution: {integrity: sha512-HZwodlEz/WCR+5ILWNbRE/oebEYywNSk4uN5Ax15Ma72+bnuWXDu3HTABOo2qKXK3G/UOavE0Q5tWlt5Tmt9Jg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vk-io: ^4.0.0
     dependencies:
-      vk-io: 4.4.0
+      vk-io: 4.5.2
     dev: false
 
   /abort-controller/3.0.0:
@@ -38,13 +40,13 @@ packages:
       event-target-shim: 5.0.1
     dev: false
 
-  /data-uri-to-buffer/3.0.1:
-    resolution: {integrity: sha512-WboRycPNsVw3B3TL559F7kuBUM4d8CgMEvk6xEJlOp7OBPjt6G7z8WMWlD2rOFZLk6OYfFIUGsCOWzcQH9K2og==}
-    engines: {node: '>= 6'}
+  /data-uri-to-buffer/4.0.0:
+    resolution: {integrity: sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA==}
+    engines: {node: '>= 12'}
     dev: false
 
-  /debug/4.3.2:
-    resolution: {integrity: sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==}
+  /debug/4.3.4:
+    resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
@@ -55,35 +57,51 @@ packages:
       ms: 2.1.2
     dev: false
 
+  /dotenv/16.0.0:
+    resolution: {integrity: sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==}
+    engines: {node: '>=12'}
+    dev: false
+
   /event-target-shim/5.0.1:
     resolution: {integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==}
     engines: {node: '>=6'}
     dev: false
 
-  /fetch-blob/3.1.2:
-    resolution: {integrity: sha512-hunJbvy/6OLjCD0uuhLdp0mMPzP/yd2ssd1t2FCJsaA7wkWhpbp9xfuNVpv7Ll4jFhzp6T4LAupSiV9uOeg0VQ==}
+  /fetch-blob/3.1.5:
+    resolution: {integrity: sha512-N64ZpKqoLejlrwkIAnb9iLSA3Vx/kjgzpcDhygcqJ2KKjky8nCgUQ+dzXtbrLaWZGZNmNfQTsiQ0weZ1svglHg==}
     engines: {node: ^12.20 || >= 14.13}
     dependencies:
+      node-domexception: 1.0.0
       web-streams-polyfill: 3.1.1
     dev: false
 
-  /form-data-encoder/1.6.0:
-    resolution: {integrity: sha512-P97AVaOB8hZaniiKK3f46zxQcchQXI8EgBnX+2+719gLv5ZbDSf3J1XtIuAQ8xbGLU4vZYhy7xwhFtK8U5u9Nw==}
+  /form-data-encoder/1.7.2:
+    resolution: {integrity: sha512-qfqtYan3rxrnCk1VYaA4H+Ms9xdpPqvLZa6xmMgFvhO32x7/3J/ExcTd6qpxM0vH2GdMI+poehyBZvqfMTto8A==}
     dev: false
 
-  /formdata-node/4.3.0:
-    resolution: {integrity: sha512-TwqhWUZd2jB5l0kUhhcy1XYNsXq46NH6k60zmiu7xsxMztul+cCMuPSAQrSDV62zznhBKJdA9O+zeWj5i5Pbfg==}
+  /formdata-node/4.3.2:
+    resolution: {integrity: sha512-k7lYJyzDOSL6h917favP8j1L0/wNyylzU+x+1w4p5haGVHNlP58dbpdJhiCUsDbWsa9HwEtLp89obQgXl2e0qg==}
     engines: {node: '>= 12.20'}
     dependencies:
       node-domexception: 1.0.0
       web-streams-polyfill: 4.0.0-beta.1
     dev: false
 
-  /inspectable/1.2.0:
-    resolution: {integrity: sha512-5czj8MJaTEL6xO7YmIwNPxrJQI+caxU9a2JcaN/0tVpkMZfKTh5FK+OafsMtnpBT4ekxcaHZOW3+DrluBVaLOQ==}
+  /formdata-polyfill/4.0.10:
+    resolution: {integrity: sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==}
+    engines: {node: '>=12.20.0'}
+    dependencies:
+      fetch-blob: 3.1.5
+    dev: false
+
+  /inspectable/1.2.1:
+    resolution: {integrity: sha512-OKfL06Szd6TW5asTRtsmiAZXeli85jHQHmgN5YepTlxOh3gj/1PZA0WR0BKFUOwDOo7sl0DMrJThmNi7u8PrWw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       reflect-metadata: ^0.1.13
+    peerDependenciesMeta:
+      reflect-metadata:
+        optional: true
     dev: false
 
   /middleware-io/2.8.0:
@@ -100,25 +118,26 @@ packages:
     engines: {node: '>=10.5.0'}
     dev: false
 
-  /node-fetch/3.0.0:
-    resolution: {integrity: sha512-bKMI+C7/T/SPU1lKnbQbwxptpCrG9ashG+VkytmXCPZyuM9jB6VU+hY0oi4lC8LxTtAeWdckNCTa3nrGsAdA3Q==}
+  /node-fetch/3.2.4:
+    resolution: {integrity: sha512-WvYJRN7mMyOLurFR2YpysQGuwYrJN+qrrpHjJDuKMcSPdfFccRUla/kng2mz6HWSBxJcqPbvatS6Gb4RhOzCJw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
-      data-uri-to-buffer: 3.0.1
-      fetch-blob: 3.1.2
+      data-uri-to-buffer: 4.0.0
+      fetch-blob: 3.1.5
+      formdata-polyfill: 4.0.10
     dev: false
 
-  /vk-io/4.4.0:
-    resolution: {integrity: sha512-jg5atOUHHXRxZ+CJOtN1baWAYrVLzKYGNsjZtQn6fNrQnkcYC7jXKBW2pXmQhZjNOVDvkooN/9koZOaoh3JOqw==}
-    engines: {node: '>=12.0.0'}
+  /vk-io/4.5.2:
+    resolution: {integrity: sha512-qwm9zHMLXJu658EqABPik2dGEvsFWP94WTUC2iZO9rSaEKsXS764UHgjNmHxCwEJjNuQBXo7HIOp0jzan4Ks7w==}
+    engines: {node: '>=12.20.0'}
     dependencies:
       abort-controller: 3.0.0
-      debug: 4.3.2
-      form-data-encoder: 1.6.0
-      formdata-node: 4.3.0
-      inspectable: 1.2.0
+      debug: 4.3.4
+      form-data-encoder: 1.7.2
+      formdata-node: 4.3.2
+      inspectable: 1.2.1
       middleware-io: 2.8.0
-      node-fetch: 3.0.0
+      node-fetch: 3.2.4
     transitivePeerDependencies:
       - reflect-metadata
       - supports-color
