@@ -13,9 +13,9 @@
   "author": "MIEFoundation",
   "license": "GPL-3.0",
   "dependencies": {
-    "@vk-io/hear": "^1.1.0",
-    "@vk-io/session": "^2.1.0",
-    "dotenv": "^16.0.0",
-    "vk-io": "^4.5.2"
+    "@vk-io/hear": "1.1.0",
+    "@vk-io/session": "2.1.0",
+    "dotenv": "16.0.1",
+    "vk-io": "4.3.1"
   }
 }
