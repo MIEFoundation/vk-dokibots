@@ -4,33 +4,33 @@ specifiers:
   '@vk-io/hear': 1.1.0
   '@vk-io/session': 2.1.0
   dotenv: 16.0.1
-  vk-io: 4.5.2
+  vk-io: 4.6.0
 
 dependencies:
-  '@vk-io/hear': 1.1.0_vk-io@4.5.2
-  '@vk-io/session': 2.1.0_vk-io@4.5.2
+  '@vk-io/hear': 1.1.0_vk-io@4.6.0
+  '@vk-io/session': 2.1.0_vk-io@4.6.0
   dotenv: 16.0.1
-  vk-io: 4.5.2
+  vk-io: 4.6.0
 
 packages:
 
-  /@vk-io/hear/1.1.0_vk-io@4.5.2:
+  /@vk-io/hear/1.1.0_vk-io@4.6.0:
     resolution: {integrity: sha512-L2Jfn+L9otrnxbZSt6K10nCnF/KyLrFuuEYufx03Y+HOSoq6cIIopKtPLPfMH7lqVg/0iLZ3jTqzbG+qOi4YuQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vk-io: ^4.0.0
     dependencies:
       middleware-io: 2.8.0
-      vk-io: 4.5.2
+      vk-io: 4.6.0
     dev: false
 
-  /@vk-io/session/2.1.0_vk-io@4.5.2:
+  /@vk-io/session/2.1.0_vk-io@4.6.0:
     resolution: {integrity: sha512-HZwodlEz/WCR+5ILWNbRE/oebEYywNSk4uN5Ax15Ma72+bnuWXDu3HTABOo2qKXK3G/UOavE0Q5tWlt5Tmt9Jg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vk-io: ^4.0.0
     dependencies:
-      vk-io: 4.5.2
+      vk-io: 4.6.0
     dev: false
 
   /abort-controller/3.0.0:
@@ -127,8 +127,8 @@ packages:
       formdata-polyfill: 4.0.10
     dev: false
 
-  /vk-io/4.5.2:
-    resolution: {integrity: sha512-qwm9zHMLXJu658EqABPik2dGEvsFWP94WTUC2iZO9rSaEKsXS764UHgjNmHxCwEJjNuQBXo7HIOp0jzan4Ks7w==}
+  /vk-io/4.6.0:
+    resolution: {integrity: sha512-doP3RgFGbqH4NAWnXPSZxEa6IDjWZk16TEuV3UO70TSXqYDkQnWmwRmyOq/zgrtwtM1nKZ2/0HulYGcKY2/j/g==}
     engines: {node: '>=12.20.0'}
     dependencies:
       abort-controller: 3.0.0
