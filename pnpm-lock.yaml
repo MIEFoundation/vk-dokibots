@@ -3,13 +3,13 @@ lockfileVersion: 5.3
 specifiers:
   '@vk-io/hear': 1.1.0
   '@vk-io/session': 2.2.0
-  dotenv: 16.0.2
+  dotenv: 16.0.3
   vk-io: 4.7.0
 
 dependencies:
   '@vk-io/hear': 1.1.0_vk-io@4.7.0
   '@vk-io/session': 2.2.0_vk-io@4.7.0
-  dotenv: 16.0.2
+  dotenv: 16.0.3
   vk-io: 4.7.0
 
 packages:
@@ -57,8 +57,8 @@ packages:
       ms: 2.1.2
     dev: false
 
-  /dotenv/16.0.2:
-    resolution: {integrity: sha512-JvpYKUmzQhYoIFgK2MOnF3bciIZoItIIoryihy0rIA+H4Jy0FmgyKYAHCTN98P5ybGSJcIFbh6QKeJdtZd1qhA==}
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
     engines: {node: '>=12'}
     dev: false
 
