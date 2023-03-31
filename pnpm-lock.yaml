@@ -4,33 +4,33 @@ specifiers:
   '@vk-io/hear': 1.1.1
   '@vk-io/session': 2.2.1
   dotenv: 16.0.3
-  vk-io: 4.8.1
+  vk-io: 4.8.2
 
 dependencies:
-  '@vk-io/hear': 1.1.1_vk-io@4.8.1
-  '@vk-io/session': 2.2.1_vk-io@4.8.1
+  '@vk-io/hear': 1.1.1_vk-io@4.8.2
+  '@vk-io/session': 2.2.1_vk-io@4.8.2
   dotenv: 16.0.3
-  vk-io: 4.8.1
+  vk-io: 4.8.2
 
 packages:
 
-  /@vk-io/hear/1.1.1_vk-io@4.8.1:
+  /@vk-io/hear/1.1.1_vk-io@4.8.2:
     resolution: {integrity: sha512-WmBj+k5DzEnhYjOwaS5DP/TOLIFetK6oS+TM4rna6xBrxVfFYAcjk9+8cz/L2O/KpCeAzfJoH/RrtJp3j9Tgag==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       vk-io: ^4.0.0
     dependencies:
       middleware-io: 2.8.1
-      vk-io: 4.8.1
+      vk-io: 4.8.2
     dev: false
 
-  /@vk-io/session/2.2.1_vk-io@4.8.1:
+  /@vk-io/session/2.2.1_vk-io@4.8.2:
     resolution: {integrity: sha512-4hU5Ex/efiZtzFu9aM0mRqVc51dLt8kCorn0TU02ny7PO5E19SZ83h9x14qDPWD2mjrlPVSgLZrYDVv/Qt+ouA==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       vk-io: ^4.0.0
     dependencies:
-      vk-io: 4.8.1
+      vk-io: 4.8.2
     dev: false
 
   /abort-controller/3.0.0:
@@ -94,8 +94,8 @@ packages:
       fetch-blob: 3.1.5
     dev: false
 
-  /inspectable/1.2.2:
-    resolution: {integrity: sha512-6wGbJJe0Y8oTLSoLXIZht1OVLLh9DNitpX+IoneyUWczkHQNWcVYuFVu7beGQoCemBELdJXpaffswBeQ9RTSVA==}
+  /inspectable/2.0.0:
+    resolution: {integrity: sha512-fm7l+r/3fuXdYE/DyB5j/9ibczakZxwygTkqz24e0ecdKLSM4Celm7CAIctGKm8TED0mCa+uXUfPiFROfb7kJA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       reflect-metadata: ^0.1.13
@@ -118,8 +118,8 @@ packages:
     engines: {node: '>=10.5.0'}
     dev: false
 
-  /node-fetch/3.2.10:
-    resolution: {integrity: sha512-MhuzNwdURnZ1Cp4XTazr69K0BTizsBroX7Zx3UgDSVcZYKF/6p0CBe4EUb/hLqmzVhl0UpYfgRljQ4yxE+iCxA==}
+  /node-fetch/3.3.1:
+    resolution: {integrity: sha512-cRVc/kyto/7E5shrWca1Wsea4y6tL9iYJE5FBCius3JQfb/4P4I295PfhgbJQBLTx6lATE4z+wK0rPM4VS2uow==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       data-uri-to-buffer: 4.0.0
@@ -127,17 +127,17 @@ packages:
       formdata-polyfill: 4.0.10
     dev: false
 
-  /vk-io/4.8.1:
-    resolution: {integrity: sha512-ThaHZNjn+ocNgipMz76w3IAMxoV4i70R/mNfsWVDQw0QlBdl9xDtB/O0ZBx9tdTYZqdBllQ5JBaALqTyQkgQWA==}
+  /vk-io/4.8.2:
+    resolution: {integrity: sha512-excbc4zEcuh1iw9MfzKLiHApS4TyjhuL8X4ugkDd9anCaI69NgQ9xfTGhyuNlQOI+zE9asfO+r/vPMp7RUYSGA==}
     engines: {node: '>=12.20.0'}
     dependencies:
       abort-controller: 3.0.0
       debug: 4.3.4
       form-data-encoder: 1.7.2
       formdata-node: 4.4.1
-      inspectable: 1.2.2
+      inspectable: 2.0.0
       middleware-io: 2.8.1
-      node-fetch: 3.2.10
+      node-fetch: 3.3.1
     transitivePeerDependencies:
       - reflect-metadata
       - supports-color
