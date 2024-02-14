@@ -15,7 +15,7 @@
   "dependencies": {
     "@vk-io/hear": "1.1.1",
     "@vk-io/session": "2.2.1",
-    "dotenv": "16.4.3",
+    "dotenv": "16.4.4",
     "vk-io": "4.9.1"
   }
 }
